@@ -1,0 +1,30 @@
+python3 -W ignore main_train.py \
+  --seed 1234 \
+  --batch_size 512 \
+  --model resnet18 \
+  --dataset cifar10 \
+  --mem_size $MEM_SIZE \
+  --epochs 100 \
+  --start_epoch 500 \
+  --learning_rate 0.5 \
+  --temperature 0.5 \
+  --current_temp 0.2 \
+  --past_temp 0.01  \
+  --current_temp_sprd 0.2  \
+  --past_temp_sprd 0.1  \
+  --cosine \
+  --num_workers 16 \
+  --wandb \
+  --wandb_project_name your_project_name \
+  --wandb_entity your_entity \
+  --job_run_name fcnccl-samix-cf10-m-${MEM_SIZE} \
+  --distillation hsd \
+  --log_folder_zero_mem ${LOG_FOLDER_ZERO_MEM} \
+  --loss nc_samix \
+  --loss_normal_samples fnc2 \
+  --weight_samix_loss 5.0 \
+  --filter_distillation_point \
+  --samix \
+  --predictor_hidden_dim 128 \
+  --main_mark 30 \
+  --focal_gamma 1

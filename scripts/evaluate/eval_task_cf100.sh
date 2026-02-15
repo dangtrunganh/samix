@@ -1,0 +1,15 @@
+python3 -W ignore main_eval.py \
+  --seed 1234 \
+  --target_task 4 \
+  --dataset cifar100 \
+  --learning_rate 0.1 \
+  --batch_size 256 \
+  --epochs 100 \
+  --num_workers 16 \
+  --model resnet18 \
+  --wandb \
+  --wandb_project_name your_project_name \
+  --wandb_entity your_entity \
+  --job_run_name LINEAR-eval-cifar100  \
+  --ckpt ${CHECKPOINT_FOLDER} \
+  --logpt ${LOG_FOLDER}

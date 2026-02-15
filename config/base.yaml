@@ -1,0 +1,18 @@
+general:
+  save_path_config:
+      root_save_folder: "your/root/folder/"
+      data_folder: "{root_save_folder}/data"
+      experiments_folder: "{root_save_folder}/experiments"
+      wandb_folder: "{root_save_folder}/wandb"
+      run_exp_folder: "{experiments_folder}/{job_run_name}-{datetime}"
+  pattern_name:
+      model_task_name: "last_{policy}_{target_task}.pth"
+      replay_indices_task_name: "replay_indices_{policy}_{target_task}.npy"
+      subset_all_indices_task_name: "subset_indices_{policy}_{target_task}.npy"
+      set_prototypes_name: "prototypes_dim={d}_k={k}_seed={seed}.npy"
+      job_wandb_name_train: "TRAINING-{job_run_name}"
+      job_wandb_name_eval: "EVAL-{job_run_name}-task-{target_task}"
+      config_json_name_train: "train_args_task_{target_task}.json"
+      config_json_name_eval: "eval_args_task_{target_task}.json"
+      accuracy_single_task: "accuracy_task_{target_task}.txt"
+      eval_model_name: "linear_model_{eval_folder_name}_task_{target_task}.pth"
